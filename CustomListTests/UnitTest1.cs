@@ -7,40 +7,43 @@ namespace CustomListTests
     public class UnitTest1
     {
         [TestMethod]
-        public void AddTwoNumbers_Age()
+        public void Add_AddingTwoValuesToList_ExpectingCountToBeTwo()
         {
-                //Arrange
-                
+            //Arrange
+            CustomList<int> customList = new CustomList<int>();
             int firstNumber = 17;
             int secondNumber = 18;
-            
-                //Act
-        
-            Calculator calculator = new Calculator();
-            
-                int sum = calculator.Add(firstNumber, secondNumber);
+            int expected = 2;
+            int actual;
 
-                //Assert
+            //Act
+            customList.Add(firstNumber);
+            customList.Add(secondNumber);
+            actual = customList.Count;
+            
+            //Assert
                 
-            Assert.AreEqual(35, sum);
+            Assert.AreEqual(expected, actual);
         }
 
-
-        public void OneStringName()
+        [TestMethod]
+        public void Add_AddingOneStringName_CheckingZeroIndex()
         {
                 //Arrange
-                CustomList<string> customList = new CustomList<string>();
+                CustomList<string> nameList = new CustomList<string>();
                 string expected = "Kelly";
                 string actual;
 
                 //Act
-                customList.Add("Kelly");
-                actual = customList[0];
+                nameList.Add("Kelly");
+                actual = nameList[0];
 
                 //Assert
                 Assert.AreEqual(expected, actual);
         }
-        public void TypeCar()
+
+        [TestMethod]
+        public void Add_AddingTwoStringValuesToList_ExpectingCountToBeTwo()
         {
             //Arrange
             CustomList<string> carList = new CustomList<string>();
@@ -57,20 +60,65 @@ namespace CustomListTests
             Assert.AreEqual(expected, actual);
 
         }
-        public void CustomList<T>()
+        
+        [TestMethod]
+        public void Add_AddFiveItems_CapacityShouldBe8()
         {
-            //member variables
-            T[] items = new T[4];
+            //Arrange
+            CustomList<string> carList = new CustomList<string>();
+            int expected = 4;
+            int actual;
 
-           
+            //Act
+            carList.Add("Honda");
+            carList.Add("Jeep");
+            carList.Add("Mazda");
+            carList.Add("Toyota");
+            carList.Add("Nissan");
 
+            actual = carList.Count;
+
+            //Assert
+            Assert.AreEqual(expected, actual);
 
         }
-
-
-
-
         
+        [TestMethod]
+        public void Add_AddFiveItems_0IndexPersists()
+        {
+            //Arrange
+            CustomList<string> carList = new CustomList<string>();
+            int expected = 5;
+            int actual;
+
+            //Act
+            carList.Add("Honda");
+            carList.Add("Jeep");
+            carList.Add("Mazda");
+            carList.Add("Toyota");
+            carList.Add("Nissan");
+
+            actual = carList.Count;
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+
+        }
+        
+        
+        
+        
+        
+        
+        //check capacity when list is created
+        //check capacity when list has more than 4 values added
+        //check an index to make sure a value is still in the right spot after capity is increased
+        
+
+
+
+
+
 
 
 
