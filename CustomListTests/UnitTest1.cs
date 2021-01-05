@@ -43,24 +43,28 @@ namespace CustomListTests
         public void TypeCar()
         {
             //Arrange
-            CustomList<string> customList = new CustomList<string>();
-            string expected = "Honda";
-            string actual;
+            CustomList<string> carList = new CustomList<string>();
+            int expected = 2;
+            int actual;
 
             //Act
-            customList.Add("Honda");
-            actual = customList[0];
+            carList.Add("Honda");
+            carList.Add("Jeep");
+
+            actual = carList.Count;
 
             //Assert
             Assert.AreEqual(expected, actual);
+
         }
-        public void Main(string[] args)
+        public void CustomList<T>()
         {
-            object[] array = new object[3];
-            array[0] = 35;
-            array[1] = "Kelly";
-            array[2] = "Honda";
+            //member variables
+            T[] items = new T[4];
+
            
+
+
         }
 
 

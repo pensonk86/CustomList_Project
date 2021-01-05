@@ -10,6 +10,22 @@ namespace CustomListProject
     {
         static void Main(string[] args)
         {
+            List<int> Age = new List<int>();
+
+            Age.Add(17);
+            Age.Add(18);
+
+            List<string> name = new List<string>();
+
+            name.Add("Kelly");
+
+            CustomList<string> carList = new CustomList<string>();
+
+            carList.Add("Honda");
+            carList.Add("Jeep");
+
+
         }
     }
 }
+
