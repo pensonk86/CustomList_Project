@@ -36,7 +36,20 @@ namespace CustomListTests
             }
 
         }
-
+        public  int capacity
+        {
+            get { return capacity; }
+        }
+        public int CapacityIncrementor
+        {
+            get { return CapacityIncrementor; }
+        }
+        
+        public int Count
+        {
+            get { return Count; }
+        }
+        
         //constructor
         public CustomList()
         {
@@ -46,15 +59,86 @@ namespace CustomListTests
         }
 
         //member methods (CAN DO)
-        public void Add(T item)
+        //1. Add item to next available index
+        //2. Increment count, assuming item was added successfully
+        //3. If count and capacity are the same, then create more space
+        //4. 
+        public void Add(int index, T Value)
         {
-            //1. Add item to next available index
-            //2. Increment count, assuming item was added successfully
-            //3. If count and capacity are the same, then create more space
-            //4. 
-            items[Count] = item;
+            if (index >= 0 && index < Count)
+            {
+                if (IsNearCapacity(1)) ;
+
+                IncreaseCapacity(Count + 1);
+
+            }    
+                
+            for (int i = count; i >= index; i--)
+            {
+                Count[index] = Count[i - 1];
+
+            }
+            Count[index] = Value;
             Count++;
+            
+                
+            
+            items[Count] = Count;
+            Count++;
+                
         }
+            
+        public void Remove(int index, T Value)
+        {
+            
+            if(index >= 0 && index < Count)
+            {
+                for (int i = index; i < Count; i++)
+                {
+                    if (i != Count - 1)
+                    {
+                        Count[i] = Count[i + 1];
+                    }
+                    else
+                    {
+                        Count[i] = default(T);
+                    }
+                    else
+                    {
+                        throw new ArgumentOutOfRangeException();
+                    }
+
+
+                    items[Count] = Count;
+                    Count--;
+
+
+
+
+                }
+
+
+            }
+            
+            
+            
+        }
+            
+
+
+            
+
+
+            
+
+          
+
+
+
+
+
+            
+            
 
 
 
@@ -63,6 +147,10 @@ namespace CustomListTests
 
 
 
+        
+	{
+
+	}
     }
 
 

@@ -104,10 +104,8 @@ namespace CustomListTests
             Assert.AreEqual(expected, actual);
 
         }
-        
-        
-        
-        
+
+
         
         
         //check capacity when list is created
