@@ -104,6 +104,28 @@ namespace CustomListTests
             Assert.AreEqual(expected, actual);
 
         }
+        [TestMethod]
+        
+        public void Add_AddNumber_CountIncreaseByOne()
+        {   //Arrange
+            CustomList<int> customList = new CustomList<int>();
+            int firstNumber = 17;
+            int secondNumber = 1;
+            int expected = 1;
+            int actual;
+
+            //Act
+            customList.Add(firstNumber);
+            customList.Add(secondNumber);
+            actual = customList.Count;
+
+            //Assert
+
+            Assert.AreEqual(expected, actual);
+
+        }
+        [TestMethod]
+        public void 
 
 
         
