@@ -72,11 +72,51 @@ namespace CustomListTests
 
 
         }
-        
-            
+        public void Remove(T Value)
+        {
+            string[] carList = new string[5];
+            carList[0] = "Toyota";
+            carList[1] = "Honda";
+            carList[2] = "Jeep";
+            carList[3] = "Mazda";
+            carList[4] = "Nissan";
+
+
+
+
+        }
+        public string Cars { get; set; }
+        public string Garage { get; set; } 
+        public override string ToString()
+        {
+            string[] cars = { "Honda", "Jeep", "Mazda", "Toyota", "Nissan" };
+
+            foreach (string Cars in Garage)
+            {
+               
+                Console.WriteLine(Cars);
+            }
+            return Garage.ToString() + "-" + Cars.ToString();
+
+
+
+
+
+
+
+        }
+
+
+
+
+
+
+
+
+
         //public void Remove(int index, T Value)
         //{
-            
+
         //    if(index >= 0 && index < Count)
         //    {
         //        for (int i = index; i < Count; i++)
@@ -104,7 +144,7 @@ namespace CustomListTests
         //        }
 
 
-            }
+    }
             
             
             
