@@ -89,14 +89,7 @@ namespace CustomListTests
         public string Garage { get; set; } 
         public override string ToString()
         {
-            string[] cars = { "Honda", "Jeep", "Mazda", "Toyota", "Nissan" };
-
-            foreach (string Cars in Garage)
-            {
-               
-                Console.WriteLine(Cars);
-            }
-            return Garage.ToString() + "-" + Cars.ToString();
+            
 
 
 
